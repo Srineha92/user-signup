@@ -1,6 +1,6 @@
 
 from flask import Flask, request, redirect, render_template
-import re
+
 app = Flask(__name__)
 app.config['DEBUG'] = True
 @app.route('/', methods=['POST', 'GET'])
@@ -36,7 +36,7 @@ def index():
              verify_error = 'Passwords do not match.'
         else:
             if password != verify:
-                verify_rror = 'Passwords do not match.'
+                verify_error = 'Passwords do not match.'
           
         if ('@' not in email) or ('.' not in email):
             email_error = 'Invalid email'
