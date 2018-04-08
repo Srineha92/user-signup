@@ -38,7 +38,7 @@ def index():
             if password != verify:
                 verify_rror = 'Passwords do not match.'
           
-        if (email != '') and (not re.match('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$', email)):
+        if ('@' not in email) or ('.' not in email):
             email_error = 'Invalid email'
             email = ''
         if (not username_error) and (not password_error) and (not verify_error) and (not email_error):
